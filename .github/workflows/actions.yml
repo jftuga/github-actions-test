@@ -14,10 +14,15 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
+          echo "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+          set
+          echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
           git clone https://github.com/$GITHUB_REPOSITORY
           ls -la
-          # git checkout $GITHUB_SHA
-          # ls -la
+          cd github-actions-test
+          pwd
+          git checkout $GITHUB_SHA
+          ls -la
       # - name: Checkout
       #   uses: actions/checkout@v1
       # - name: List Files After Checkout
