@@ -9,20 +9,16 @@ jobs:
       - name: List Files
         run: |
           pwd
-          ls -laR
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
-          echo "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
-          set
-          echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
           git clone https://github.com/$GITHUB_REPOSITORY
-          ls -la
           cd *
           pwd
           git checkout $GITHUB_SHA
           ls -la
+          md5sum *.md
       # - name: Checkout
       #   uses: actions/checkout@v1
       # - name: List Files After Checkout
