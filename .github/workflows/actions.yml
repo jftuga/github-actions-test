@@ -19,7 +19,7 @@ jobs:
           echo "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
           git clone https://github.com/$GITHUB_REPOSITORY
           ls -la
-          cd github-actions-test
+          cd *
           pwd
           git checkout $GITHUB_SHA
           ls -la
