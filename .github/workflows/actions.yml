@@ -15,8 +15,9 @@ jobs:
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
           git clone https://github.com/$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
           ls -la
+          # git checkout $GITHUB_SHA
+          # ls -la
       # - name: Checkout
       #   uses: actions/checkout@v1
       # - name: List Files After Checkout
