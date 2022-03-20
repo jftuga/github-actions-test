@@ -1,0 +1,30 @@
+---
+name: Random Number
+
+on: push
+
+jobs:
+  random-file-pusher:
+    runs-on: ubuntu-latest
+    env:
+      FNAME: random.txt
+    steps:
+      - name: push a random file
+        run: |
+          pwd
+          ls -la
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "jftuga@users.noreply.github.com""
+          git config --global user.name "John Taylor"
+          git fetch
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls -la
+          echo $RANDOM >> ${FNAME}
+          cat ${FNAME}
+          ls -la
+          git add -A
+          git commit -m "append to ${FNAME}"
+          git push
