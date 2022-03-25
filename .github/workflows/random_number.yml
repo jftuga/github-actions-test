@@ -1,7 +1,7 @@
 ---
 name: Random Number
 
-on: push
+on: pull_request
 
 jobs:
   random-file-pusher:
